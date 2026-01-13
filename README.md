@@ -113,32 +113,32 @@ This workflow is responsible for **persisting qualified leads**.
 
 ---
 
-![Chat Flow](screenshots/chat_confirmation1.png)
+![Chat Flow](screenshots/chat_confirmation1.jpeg)
 
 
 ---
 
-![Chat Flow](screenshots/chat_confirmation2.png)
+![Chat Flow](screenshots/chat_confirmation2.jpeg)
 
 
 ---
 
-![Chat Flow](screenshots/chat_confirmation3.png)
+![Chat Flow](screenshots/chat_confirmation3.jpeg)
 
 
 ---
 
-![Chat Flow](screenshots/chat_confirmation4.png)
+![Chat Flow](screenshots/chat_confirmation4.jpeg)
 
 
 ---
 
-![Chat Flow](screenshots/chat_confirmation5.png)
+![Chat Flow](screenshots/chat_confirmation5.jpeg)
 
 
 ---
 
-![Chat Flow](screenshots/chat_confirmation6.png)
+![Chat Flow](screenshots/chat_confirmation6.jpeg)
 
 ---
 
