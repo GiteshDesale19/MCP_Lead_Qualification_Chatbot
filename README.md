@@ -1,150 +1,172 @@
-# 🏠 MCP Client Lead Qualification Chatbot (n8n)
+# 🤖 MCP-Based Lead Qualification Chatbot (n8n)
 
-An AI-powered real estate **lead qualification and site visit booking chatbot** built using **n8n**, **Google Gemini**, and **MCP Client**.  
-This project automates customer conversations for **Godrej Properties, Hinjawadi (Pune)** and converts interested users into scheduled site visits.
-
----
-
-## 🚀 Project Overview
-
-This chatbot acts as a virtual sales assistant named **Sarah**.  
-Its primary responsibility is to answer property-related queries, qualify potential buyers, and book site visit appointments — all through a structured conversational workflow.
-
-The bot strictly stays on-topic and politely redirects or ends conversations when users go off-topic.
+An AI-powered chatbot that automates **real-estate lead qualification**, **site visit scheduling**, and **lead storage** using **n8n** and **MCP Client–Server architecture**.
 
 ---
 
-## 🧠 Key Features
-
-- AI-powered conversational agent using **Google Gemini**
-- Real estate–focused lead qualification logic
-- Automated site visit booking flow
-- Context retention using **Simple Memory**
-- Structured responses via **MCP Client**
-- Off-topic handling with graceful redirection
-- Fully automated workflow built in **n8n**
+## 📌 Project Overview
+This project demonstrates how low-code automation and AI can be combined to build a **smart conversational chatbot**.  
+The chatbot interacts with users, understands their requirements, schedules site visits, and automatically stores qualified lead data in **Google Sheets**.
 
 ---
 
-## 🛠️ Tech Stack
-
-- **n8n** – Workflow automation platform  
-- **Google Gemini Chat Model** – AI conversation engine  
-- **MCP Client** – Tool-based structured data handling  
-- **Simple Memory** – Conversation context storage  
-
----
-
-## 🧩 Workflow Architecture
-
-```
-When Chat Message Received
-        ↓
-      AI Agent
-   ┌──────────────────┐
-   │ Google Gemini    │
-   │ Simple Memory    │
-   │ MCP Client Tool  │
-   └──────────────────┘
-        ↓
-   Lead Qualification & Booking
-```
+## ✨ Key Features
+- 💬 AI-driven conversational chatbot
+- 🔗 MCP Client–Server communication
+- 🏠 Real-estate lead qualification
+- 📅 Automated site visit scheduling
+- 📊 Lead storage in Google Sheets
+- 🧠 Memory-enabled conversation handling
 
 ---
 
-## 🏢 Property Information
+## 🏗️ System Architecture
 
-- **Project Name:** Godrej Properties  
-- **Location:** Hinjawadi, Pune (IT Hub)  
-- **Configurations:** 2BHK, 3BHK, 4BHK  
+User Chat
 
-### 💰 Pricing
-- 2BHK – ₹50 Lakhs onwards  
-- 3BHK – ₹60 Lakhs onwards  
-- 4BHK – ₹70 Lakhs onwards  
+↓
 
-### 🏊 Amenities
-- Clubhouse with swimming pool  
-- Fully-equipped gym  
-- 24/7 security  
-- Children’s play area  
-- Landscaped gardens  
-- Power backup & covered parking  
+n8n Chat Trigger
 
-**Availability:** Limited units remaining
+↓
 
----
+AI Agent (Google Gemini + Memory)
 
-## 🗣️ Conversation Rules
+↓
 
-- Answers **only property-related questions**
-- Always nudges toward **site visit booking**
-- Keeps replies concise (2–3 sentences max)
-- Redirects off-topic queries politely
-- Ends conversation if the user is not interested
+MCP Client
+
+↓
+
+MCP Server
+
+↓
+
+Google Sheets (Lead Storage)
 
 ---
 
-## 📅 Site Visit Booking Logic
-
-1. User shows interest  
-2. Bot offers available time slots  
-3. User confirms date & time  
-4. Bot collects name and mobile number  
-5. Site visit is booked and confirmed  
-
-### ⏰ Available Slots
-- Weekdays: 10 AM – 6 PM  
-- Weekends: 10 AM – 4 PM  
-- Timezone: Asia/Kolkata (+05:30)
+## ⚙️ Tech Stack
+- **n8n** (Workflow Automation)
+- **Google Gemini Chat Model**
+- **MCP Client & MCP Server**
+- **Google Sheets**
+- **AI Agent with Memory**
 
 ---
 
-## 📤 Sample Output
+## 📂 Project Structure
 
-```json
-{
-  "Name": "Gitesh",
-  "Date": "2026-01-14",
-  "Time": "11 AM",
-  "Interest": "2BHK",
-  "Summary": "Interested in 2BHK, site visit confirmed"
-}
-```
+MCP_Lead_Qualification_Chatbot/
+
+├── screenshots/
+
+
+├── workflows/
+
+
+└── README.md
 
 ---
 
-## ▶️ How to Run the Project
+## 🔄 Workflow Details
 
-1. Import the workflow JSON into **n8n**
+### 1️⃣ MCP Client – Lead Qualification
+This workflow handles all **user interactions** and lead qualification logic.
+
+**Responsibilities:**
+- Receives user messages
+- Uses AI Agent for intelligent conversation
+- Collects:
+  - 👤 Name
+  - 📞 Mobile number
+  - 🏢 Apartment type (2BHK / 3BHK / 4BHK)
+  - ⏰ Site visit time
+- Sends structured data to MCP Server
+
+📸 **Client Workflow**
+
+---
+
+![Client Workflow](workflows/client_workflow.png)
+
+---
+
+### 2️⃣ MCP Server – Lead Storage
+This workflow is responsible for **persisting qualified leads**.
+
+**Responsibilities:**
+- Receives structured lead data from MCP Client
+- Appends lead details to Google Sheets
+
+📸 **Server Workflow**
+
+---
+
+![Server Workflow](workflows/server_workflow.png)
+
+---
+
+## 💬 Sample Chat Flow
+
+📸 **Chat Interaction Examples**
+
+---
+
+![Chat Flow](screenshots/chat_confirmation1.png)
+
+
+---
+
+![Chat Flow](screenshots/chat_confirmation2.png)
+
+
+---
+
+![Chat Flow](screenshots/chat_confirmation3.png)
+
+
+---
+
+![Chat Flow](screenshots/chat_confirmation4.png)
+
+
+---
+
+![Chat Flow](screenshots/chat_confirmation5.png)
+
+
+---
+
+![Chat Flow](screenshots/chat_confirmation6.png)
+
+---
+
+## 📊 Output – Google Sheets
+All qualified leads are stored automatically for easy access and tracking.
+
+📸 **Lead Storage Example**
+
+---
+
+![Google Sheet Output](screenshots/google_sheet_output.png)
+
+---
+
+## 🚀 How to Run This Project
+1. Import the workflows into **n8n**
 2. Configure:
    - Google Gemini API credentials
-   - MCP Client connection
-3. Activate the workflow
-4. Open n8n Chat UI and start testing
+   - Google Sheets credentials
+3. Activate both workflows
+4. Start chatting with users
 
 ---
 
 ## 🎯 Use Cases
-
-- Real estate lead qualification
-- Automated appointment scheduling
-- AI sales assistant
-- Customer engagement automation
-- Pre-filtering CRM leads
+- 🏠 Real-estate lead qualification
+- 📅 Appointment scheduling bots
+- 📈 Sales automation
+- 🗂️ CRM data collection
 
 ---
-
-## 🔮 Future Enhancements
-
-- CRM integration (Zoho, HubSpot)
-- WhatsApp & website chatbot deployment
-- Lead analytics dashboard
-- Multi-project real estate support
-
----
-
-## 👤 Author
-
-**Gitesh Desale**  
-Built using **n8n + AI Automation**
